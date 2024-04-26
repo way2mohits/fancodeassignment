@@ -1,0 +1,35 @@
+#parentMovieContainer{
+    padding-top: 10%;
+}
+.year{
+    color: white;
+    font-weight: bolder;
+    font-size: 3.5rem;
+    margin-left: 1%;
+}
+.movieTilesList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movieTile{
+    background-color: #424242;
+    color: white;
+    height: 50vh;
+    width: 18%;
+    margin: 1%;
+    position: relative;
+    z-index: -2;
+}
+.movieInfoContainer{
+    position: absolute;
+    bottom:0;
+}
+.tileBackgroundContainer{
+    height: 40%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.4;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+}

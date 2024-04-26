@@ -1,0 +1,3 @@
+export const movieListPath = (releaseYear,) => `https://api.themoviedb.org/3/discover/movie?api_key=2dca580c2a14b55200e784d157207b4d&sort_by=popularity.desc&primary_release_year=${releaseYear}&page=1&vote_count.gte=100`;
+export const imagePath = (imageEndPoint)=>`https://image.tmdb.org/t/p/w500${imageEndPoint}`
+export const genrePath = `https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=2dca580c2a14b55200e784d157207b4d&poster_path=ldfCF9RhR40mppkzmftxapaHeTo.jpg`

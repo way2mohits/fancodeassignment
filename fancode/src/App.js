@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback, useEffect} from "react";
+import Header from "./Components/Header/Header";
+import TabFilter from "./Components/TabFilters/TabFilter";
+import MovieList from "./Components/MovieList/MovieList";
+import { fetchGenere } from "./Network/NetworkCalls";
+import { useDispatch } from "react-redux";
+import { addGenereList } from "./Redux/Slice/GenereSlice";
 
 function App() {
+  const dispatch = useDispatch()
+  const fetchGenereList = useCallback(async()=>{
+    const generesList = await fetchGenere();
+    if (generesList != "Error") {
+      dispatch(addGenereList(generesList.genres));
+    }
+  },[])
+  useEffect(()=>{
+    fetchGenereList()
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <div>
+          <Header />
+          <TabFilter />
+          <MovieList />
+        </div>
   );
 }
 
